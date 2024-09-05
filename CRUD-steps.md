@@ -71,7 +71,17 @@
 
 
 ```mermaid
-graph LR A(Start)-->B{Is it true?} B--Yes-->C[End] B--No-->D[End]
+graph LR
+    A[Controlador] --> B[Servicio]
+    B --> C[Repositorio]
+    C --> D[DBContext]
+    D --> E[Base de Datos]
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#fcc,stroke:#333,stroke-width:2px
+    style D fill:#cfc,stroke:#333,stroke-width:2px
+    style E fill:#fcf,stroke:#333,stroke-width:2px
+ ```
 
 ## Nota:
 El contexto de la BD se inyecta en repositorio para hacer la consulta a la BD.
