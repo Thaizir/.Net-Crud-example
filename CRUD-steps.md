@@ -15,20 +15,14 @@
 4. **Configurar el contexto de la base de datos**:
    - Crea una clase que herede de `DbContext`.
    - Agrega `DbSet<T>` para cada entidad.
-  
    ```csharp
-namespace BEERCRUD.Models
-{
-    public class StoreContext : DbContext
-    {
-        public StoreContext(DbContextOptions<StoreContext> options)
-            : base(options)
-        { }
-        // Indicamos los modelos que se pasaran a la base de datos
+   public class StoreContext : DbContext
+   {
+       public StoreContext(DbContextOptions<StoreContext> options): base(options) { }
+   
         public DbSet<Beer> Beers { get; set; }
         public DbSet<Brand> Brands { get; set; }
-    }
-}
+   }
    ```
 
 5. **Agregar el DbContext a la configuración de servicios**:
@@ -72,10 +66,6 @@ namespace BEERCRUD.Models
       builder.Services.AddKeyedScoped<ICommonService<BeerDto, BeertInsertDto, BeerUpdateDto>, BeerService>("beerService");
       ```
     - Inyectar en el controlador.
-
-## Diagrama de Inyección de Dependencias
-
-
 
 ```mermaid
 graph LR
