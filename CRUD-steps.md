@@ -15,6 +15,7 @@
 4. **Configurar el contexto de la base de datos**:
    - Crea una clase que herede de `DbContext`.
    - Agrega `DbSet<T>` para cada entidad.
+  
    ```csharp
 namespace BEERCRUD.Models
 {
