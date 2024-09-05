@@ -1,0 +1,6 @@
+@BEERCRUD_HostAddress = http://localhost:5215
+
+GET {{BEERCRUD_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
