@@ -16,12 +16,18 @@
    - Crea una clase que herede de `DbContext`.
    - Agrega `DbSet<T>` para cada entidad.
    ```csharp
-   public class StoreContext : DbContext
-   {
-       public StoreContext(DbContextOptions<StoreContext> options): base(options) { }
-   
-       public DbSet<Users> Users { get; set; }
-   }
+namespace BEERCRUD.Models
+{
+    public class StoreContext : DbContext
+    {
+        public StoreContext(DbContextOptions<StoreContext> options)
+            : base(options)
+        { }
+        // Indicamos los modelos que se pasaran a la base de datos
+        public DbSet<Beer> Beers { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+    }
+}
    ```
 
 5. **Agregar el DbContext a la configuración de servicios**:
