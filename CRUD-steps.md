@@ -71,10 +71,7 @@
 
 
 ```mermaid
-graph LR
-    A(Start)-->B{Is it true?}
-    B--Yes-->C[End]
-    B--No-->D[End]
+graph LR A(Start)-->B{Is it true?} B--Yes-->C[End] B--No-->D[End]
 
 ## Nota:
 El contexto de la BD se inyecta en repositorio para hacer la consulta a la BD.
